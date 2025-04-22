@@ -14,40 +14,7 @@ This project streamlines the note-taking process by:
 
 ## Technical Architecture
 
-┌───────────────┐    ┌───────────────┐    ┌───────────────┐
-│  Video Input  │    │  PPT Slides   │    │     Groq      │
-│    (.mp4)     │    │    (.pptx)    │    │    API Key    │
-└───────┬───────┘    └───────┬───────┘    └───────┬───────┘
-        │                    │                    │
-┌───────▼───────┐    ┌───────▼───────┐    ┌───────▼───────┐
-│ Audio         │    │ Slide Content │    │  LLM Access   │
-│ Extraction    │    │ Extraction    │    │               │
-└───────┬───────┘    └───────┬───────┘    └───────┬───────┘
-        │                    │                    │
-┌───────▼───────┐    ┌───────▼───────┐            │
-│ Audio         │    │ Topic-Content │            │
-│ Chunking      │    │ Mapping       │            │
-└───────┬───────┘    └───────┬───────┘            │
-        │                    │                    │
-┌───────▼───────┐            │                    │
-│ Whisper       │            │                    │
-│ Transcription │            │                    │
-└───────┬───────┘            │                    │
-        │                    │                    │
-┌───────▼───────┐            │                    │
-│ ChromaDB      │◄───────────┘                    │
-│ Vector Store  │                                 │
-└───────┬───────┘                                 │
-        │                                         │
-┌───────▼─────────────────────────────────────────▼───────┐
-│                   LangChain Pipeline                     │
-│     (Combines transcript chunks with slide content)      │
-└───────────────────────────────┬─────────────────────────┘
-                                │
-                        ┌───────▼───────┐
-                        │  PDF Output   │
-                        │ (Final Notes) │
-                        └───────────────┘
+![image](https://github.com/user-attachments/assets/131beb1a-f7ea-4b19-b2cd-19fb6ad3a8e0)
 
 
 ## Requirements
